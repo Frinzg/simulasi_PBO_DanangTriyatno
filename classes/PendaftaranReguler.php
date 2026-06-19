@@ -55,7 +55,6 @@ class PendaftaranReguler extends Pendaftaran
         return $this->biayaPendaftaranDasar;
     }
 
-    //override
         public function tampilkanInfoJalur()
     {
         return "Reguler | Prodi: {$this->pilihanProdi} | Kampus: {$this->lokasiKampus}";
