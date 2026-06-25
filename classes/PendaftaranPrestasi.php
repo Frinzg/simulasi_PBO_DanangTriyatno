@@ -1,5 +1,7 @@
 <?php
 
+require_once 'Pendaftaran.php';
+
 class PendaftaranPrestasi extends Pendaftaran
 {
     private $jenisPrestasi;

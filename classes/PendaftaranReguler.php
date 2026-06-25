@@ -1,34 +1,25 @@
 <?php
 
+require_once 'Pendaftaran.php';
+
 class PendaftaranReguler extends Pendaftaran
 {
     private $pilihanProdi;
     private $lokasiKampus;
 
-        public function __construct
-      (
-            $id_pendaftaran,
-            $nama_calon,
-            $asal_sekolah,
-            $nilai_ujian,
-            $biayaPendaftaranDasar,
-            $pilihanProdi,
-            $lokasiKampus
-        ) 
-        {
-        parent::__construct
-        (
-            $id_pendaftaran,
-            $nama_calon,
-            $asal_sekolah,
-            $nilai_ujian,
-            $biayaPendaftaranDasar
-        );
+       public function __construct($data)
+{
+    parent::__construct(
+        $data['id_pendaftaran'],
+        $data['nama_calon'],
+        $data['asal_sekolah'],
+        $data['nilai_ujian'],
+        $data['biayaPendaftaranDasar']
+    );
 
-            $this->pilihanProdi = $pilihanProdi;
-            $this->lokasiKampus = $lokasiKampus;
-        }
-
+    $this->pilihanProdi = $data['pilihanProdi'];
+    $this->lokasiKampus = $data['lokasiKampus'];
+}
     //Getter
     public function getpilihanProdi() 
     {

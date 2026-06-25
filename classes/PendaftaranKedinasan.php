@@ -1,5 +1,7 @@
 <?php
 
+require_once 'Pendaftaran.php';
+
 class PendaftaranKedinasan extends Pendaftaran
 {
     private $skIkatanDinas;

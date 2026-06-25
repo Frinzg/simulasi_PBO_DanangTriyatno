@@ -1,15 +1,33 @@
 <?php
-$servername = "localhost";
-$username = "username";
-$password = "password";
-$dbname = "db_simulasi_pbo_trpl-1a_danangtriyatno";
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+class Database
+{
+    private $host = "localhost";
+    private $db_name = "db_simulasi_pbo_trpl-1a_danangtriyatno";
+    private $username = "root";
+    private $password = "";
+    public $conn;
 
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
+    public function connect()
+    {
+        $this->conn = null;
+
+        $this->conn = new mysqli(
+            $this->host,
+            $this->username,
+            $this->password,
+            $this->db_name
+        );
+
+        if ($this->conn->connect_errno) {
+            echo "Connection error: " . $this->conn->connect_error;
+            return null;
+        }
+
+        $this->conn->set_charset('utf8');
+
+        return $this->conn;
+    }
 }
-echo "Connected successfully";
+
 ?>
